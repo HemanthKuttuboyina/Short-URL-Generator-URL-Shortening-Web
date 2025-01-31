@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Short URL</title>
+    <!--    <link rel="stylesheet" href="./styles.css"> -->
+</head>
+<body>
+    <h1>Short URL Generator</h1>
+    
+    <% if (locals.id) { %>
+        
+        <p>URL Generater:  http://localhost:3000/url/<%= id %></p>
+    <% } %>
+    <div class="container">
+        <form method="POST" action="/url">
+            <label>Enter the Url</label>
+            <input type="text" name="url" placeholder="https://example.com">
+            <button type="submit">Generate</button>            
+        </form>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>ShortID</th>
+                <th>Orginal Website</th>
+                <th>Clicks</th>
+            </thead>
+            <tbody>
+                <% urls.forEach((url,index) => { %>
+                <tr>
+                    <td><%= index+1 %></td>
+                    <td><%=url.shortid%></td>
+                    <td><%=url.redirectUrl%></td>
+                    <td><%=url.TC.length%></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+       
+    </div>
+</body>
+</html>
