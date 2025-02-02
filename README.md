@@ -1,4 +1,4 @@
-```markdown
+
 # Short URL Generator
 
 A simple URL shortener built with Node.js, Express, and MongoDB.
@@ -14,11 +14,11 @@ A simple URL shortener built with Node.js, Express, and MongoDB.
 - **Node.js:** v14 or later
 - **MongoDB:** Running locally on port 27017
 
-## Installation
+** Installation **
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/yourusername/[your-repo.git](https://github.com/HemanthKuttuboyina/Short-URL-Generator-URL-Shortening-Web/tree/main/)
    ```
 
 2. **Navigate to the Project Directory:**
