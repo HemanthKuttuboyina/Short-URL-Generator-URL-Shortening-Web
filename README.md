@@ -82,7 +82,4 @@ The server will run on `http://localhost:3000`.
 - [EJS](https://ejs.co/)
 - [shortid](https://www.npmjs.com/package/shortid)
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-```
+![Short URL Generator Screenshot](test_img/photo.png)
