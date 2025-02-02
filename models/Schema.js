@@ -1,7 +1,8 @@
-const mongo = require('mongoose');
 
+const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
-const schema = mongo.Schema({
+const schema = new Schema({
     shortid:{
         type:String,
         require:true,
@@ -13,5 +14,5 @@ const schema = mongo.Schema({
     },
     TC:[{time:{type:Number}}]
 },{timestamps:true});
-const SC = mongo.model("url",schema)
-module.exports = {SC}
+const SC = model("url",schema)
+module.exports = SC;

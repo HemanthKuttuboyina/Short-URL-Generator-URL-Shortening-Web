@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const router = require('./routers/router');
-const ejs = require('ejs')
 const Staticrouter = require("./routers/staticRouter")
 const {SC} = require("./models/Schema");
 const path = require('path')
@@ -16,15 +15,12 @@ app.set("views",path.resolve("./views"));
 
 app.get("/url/:shortUrl",async (req,res) => {
     const shortUrl = req.params.shortUrl;
-    const data = await SC.findOneAndUpdate({
-        shortid : shortUrl,
-    },
-    {
-        $push:{
-            TC:{time:Date.now()}
-        },
-    },{new : true}
+    const data = await SC.findOneAndUpdate(
+        { shortid : shortUrl},
+        { $push: { TC:{time:Date.now()}}},
+        {new : true}
 );
+    if(!data) return res.status(402).send("<h2>Data not found</h2>")
     return res.redirect(data.redirectUrl);
 })
 app.listen(3000,()=>{console.log(`Server Ls Live At http//localhost:3000`)});
